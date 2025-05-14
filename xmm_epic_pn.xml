@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- XMM-Newton EPIC-pn - simplified for Full Frame, Thin Filter -->
+
+<instrument telescop="XMM-Newton" instrume="EPIC-pn">
+
+<telescope>
+  <arf filename="epn_ff20_sdY9_thin.arf"/>
+  <psf filename="....."/>
+  <vignetting filename="....."/>
+  <fov diameter="0.5"/> <!-- in degrees, FoV is 30' -->
+  <focallength value="7.5"/> <!-- in metres -->
+</telescope>
+
+<detector type="ccd">
+  <dimensions xwidth="376" ywidth="384"/>
+  <pixelborder x="..." y="..."/> <!-- in metres -->
+  <wcs xrpix="....." yrpix="....." xrval="...." yrval="...."
+       xdelt="150.e-6" ydelt="150.e-6" rota="...."/> <!-- 150 µm pixels -->
+
+  <rmf filename="epn_ff20_sdY9_thin.rmf"/>
+
+  <cte value="1"/> <!-- perfect charge transfer (no charge transfer inefficiency) -->
+  <split type="GAUSS" par1="9.763e-6" par2="0.0"/> <!-- par1 needs to be tuned for epic pn using real data and epatplot currently it is erosita value -->
+  <phabackground filename=".........."/>
+    <threshold_readout_lo_keV value="0.06"/> <!-- lowest E that the readout electronics will bother to process, hardware limit -->
+  <threshold_event_lo_keV value="0.06"/> <!-- lowest E for an event to be counted as a valid photon -->
+  <threshold_pattern_up_keV value="12."/> <!-- upper E limit for standard filtering is 12 -->
+
+  <readout mode="time">
+    <wait time="0.0733"/> <!-- live time? in s -->
+    
+    <loop start="0" end="383" increment="1" variable="$i">
+      <readoutline lineindex="0" readoutindex="$i"/>
+      <lineshift/>
+      <wait time="1.8e-7"/> <!-- wait per line? seconds, with total readout time 70 microsec -->
+    </loop>
+
+    <newframe/>
+  </readout>
+</detector>
+
+</instrument>
