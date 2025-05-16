@@ -5,7 +5,7 @@
 
 <telescope>
   <arf filename="......."/>
-  <psf filename="....."/>
+  <psf filename="epn_psf_sixte_table.fits"/> <!-- generated using generate_epn_psf.py -->
   <vignetting filename="....."/>  <!-- not provided -->
   <fov diameter="0.5"/> <!-- in degrees, FoV is 30' -->
   <focallength value="7.5"/> <!-- in metres -->
