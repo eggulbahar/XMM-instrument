@@ -6,7 +6,7 @@
 <telescope>
   <arf filename="epn_ff20_sdY9_thin.arf"/>
   <psf filename="....."/>
-  <vignetting filename="....."/>
+  <vignetting filename="....."/>  <!-- not provided -->
   <fov diameter="0.5"/> <!-- in degrees, FoV is 30' -->
   <focallength value="7.5"/> <!-- in metres -->
 </telescope>
@@ -21,7 +21,7 @@
 
   <cte value="1"/> <!-- perfect charge transfer (no charge transfer inefficiency) -->
   <split type="GAUSS" par1="9.763e-6" par2="0.0"/> <!-- par1 needs to be tuned for epic pn using real data and epatplot currently it is erosita value -->
-  <phabackground filename=".........."/>
+  <phabackground filename="pntffu_events.fits"/> <!--(Carter and Read (A&A 464, p1155, 2007)) https://xmm-tools.cosmos.esa.int/external/xmm_calibration/background/bs_repository/blanksky_pntffu.html-->
     <threshold_readout_lo_keV value="0.06"/> <!-- lowest E that the readout electronics will bother to process, hardware limit -->
   <threshold_event_lo_keV value="0.06"/> <!-- lowest E for an event to be counted as a valid photon -->
   <threshold_pattern_up_keV value="12."/> <!-- upper E limit for standard filtering is 12 -->
