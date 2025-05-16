@@ -13,9 +13,9 @@
 
 <detector type="ccd">
   <dimensions xwidth="376" ywidth="384"/>
-  <pixelborder x="..." y="..."/> <!-- in metres -->
-  <wcs xrpix="....." yrpix="....." xrval="...." yrval="...."
-       xdelt="150.e-6" ydelt="150.e-6" rota="...."/> <!-- 150 µm pixels -->
+  <pixelborder x="0" y="0"/> <!-- in metres -->
+  <wcs xrpix="188.5" yrpix="192.5" xrval="0" yrval="0"
+       xdelt="150.e-6" ydelt="150.e-6" rota="291.16"/> <!-- 150 µm pixels -->
 
   <rmf filename="epn_ff20_sdY9_thin.rmf"/>
 
