@@ -17,7 +17,9 @@
   <wcs xrpix="188.5" yrpix="192.5" xrval="0" yrval="0"
        xdelt="150.e-6" ydelt="150.e-6" rota="291.16"/> <!-- 150 µm pixels -->
 
-  <rmf filename="epn_ff20_sdY9_thin.rmf"/>
+  <rmf filename="epn_e2_ff20_dY0_v22.0.rmf"/> <!--e2 is standard pattern selection (Patterns 0-4), 
+ff20 is full Frame mode, 
+dY0 means on-axis source position-->
 
   <cte value="1"/> <!-- perfect charge transfer (no charge transfer inefficiency) -->
   <split type="GAUSS" par1="9.763e-6" par2="0.0"/> <!-- par1 needs to be tuned for epic pn using real data and epatplot currently it is erosita value -->
