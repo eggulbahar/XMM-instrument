@@ -4,7 +4,7 @@
 <instrument telescop="XMM-Newton" instrume="EPIC-pn">
 
 <telescope>
-  <arf filename="epn_ff20_sdY9_thin.arf"/>
+  <arf filename="......."/>
   <psf filename="....."/>
   <vignetting filename="....."/>  <!-- not provided -->
   <fov diameter="0.5"/> <!-- in degrees, FoV is 30' -->
