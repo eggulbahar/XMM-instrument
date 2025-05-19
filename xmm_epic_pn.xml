@@ -4,7 +4,7 @@
 <instrument telescop="XMM-Newton" instrume="EPIC-pn">
 
 <telescope>
-  <arf filename="......."/>
+  <arf filename="PN_ff_thin1.arf"/> <!-- generated using obs id 0095010901, see jp notebook arfgen_ff_thin.ipynb -->
   <psf filename="epn_psf_sixte_table.fits"/> <!-- generated using generate_epn_psf.py -->
   <vignetting filename="....."/>  <!-- not provided -->
   <fov diameter="0.5"/> <!-- in degrees, FoV is 30' -->
