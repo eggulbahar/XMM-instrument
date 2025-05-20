@@ -1,11 +1,19 @@
 <?xml version="1.0"?>
 <!-- XMM-Newton EPIC-pn - simplified for Full Frame, Thin Filter -->
-
+<!-- epic-pn events file used to make sixte simulations sas compatible
+when testing if count rates with real observations match
+then add different chips
+next add bad pixels
+look at sixtesim for it  -->
 <instrument telescop="XMM-Newton" instrume="EPIC-pn">
 
 <telescope>
-  <arf filename="PN_ff_thin1.arf"/> <!-- generated using obs id 0095010901, see jp notebook arfgen_ff_thin.ipynb -->
-  <psf filename="epn_psf_sixte_table.fits"/> <!-- generated using generate_epn_psf.py -->
+  <arf filename="PN_ff_thin1.arf"/> <!-- generated using obs id 0095010901, see jp notebook arfgen_ff_thin.ipynb
+  make sure it doesnt include pixel gaps?, cheap gaps, dead pixels
+  modeleffarea, modelquantumeff, modelfiltertrans
+  there is an already existing one -->
+  <psf filename="epn_psf_sixte_table.fits"/> <!-- generated using generate_epn_psf.py 
+  there are already xmm ones use those-->
   <vignetting filename="xmm_vignetting_multiE.fits"/>  <!-- generated using SAS, see epic_pn_vignetting_ff.ipynb -->
   <fov diameter="0.5"/> <!-- in degrees, FoV is 30' -->
   <focallength value="7.5"/> <!-- in metres -->
@@ -22,8 +30,11 @@ ff20 is full Frame mode,
 dY0 means on-axis source position-->
 
   <cte value="1"/> <!-- perfect charge transfer (no charge transfer inefficiency) -->
-  <split type="GAUSS" par1="9.763e-6" par2="0.0"/> <!-- par1 needs to be tuned for epic pn using real data and epatplot currently it is erosita value -->
-  <phabackground filename="pntffu_events.fits"/> <!--(Carter and Read (A&A 464, p1155, 2007)) https://xmm-tools.cosmos.esa.int/external/xmm_calibration/background/bs_repository/blanksky_pntffu.html-->
+  <split type="GAUSS" par1="9.763e-6" par2="0.0"/> <!-- 
+  size of the charge cloud, par 1 sigma of charge cloud, par2 is energy scaling
+  par1 needs to be tuned for epic pn using real data and epatplot currently it is erosita value -->
+  <phabackground filename="pntffu_events.fits"/> <!--(Carter and Read (A&A 464, p1155, 2007)) https://xmm-tools.cosmos.esa.int/external/xmm_calibration/background/bs_repository/blanksky_pntffu.html
+  replace with filter wheel closed, should be cnalle and spectrum file, should not include cheap gaps-->
     <threshold_readout_lo_keV value="0.06"/> <!-- lowest E that the readout electronics will bother to process, hardware limit -->
   <threshold_event_lo_keV value="0.06"/> <!-- lowest E for an event to be counted as a valid photon -->
   <threshold_pattern_up_keV value="12."/> <!-- upper E limit for standard filtering is 12 -->
